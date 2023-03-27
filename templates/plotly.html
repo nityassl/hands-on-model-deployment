@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+
+<body>
+    <h1>Model Deployment</h1>
+    <div id='barchart' class='chart'></div>
+    <div id='boxplot' class='chart'></div>
+    <div id='scatterplot' class='chart'></div>
+</body>
+<script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>-->
+
+<!--  -->
+<script type='text/javascript'>
+    var graphs = {{ bar_graph_json | safe}};
+    Plotly.plot('barchart', graphs, {});
+</script>
+
+<script type='text/javascript'>
+    var graphs = {{ box_graph_json | safe}};
+    Plotly.plot('boxplot', graphs, {});
+</script>
+
+<script type='text/javascript'>
+    var graphs = {{ scatter_graph_json | safe}};
+    Plotly.plot('scatterplot', graphs, {});
+</script>
+
+</html>
